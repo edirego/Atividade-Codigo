@@ -1,0 +1,16 @@
+body {
+    font-family: Arial;     /* Define a fonte do corpo do site como Arial */
+    margin: 40px;           /* Adiciona uma margem de 40 pixels ao redor da página para espaçamento */
+}
+
+textarea, input {
+    width: 100%;            /* Faz o campo de texto e o botão ocuparem 100% da largura do contêiner */
+    margin-top: 10px;       /* Espaço superior de 10 pixels para separar do elemento acima */
+}
+
+pre {
+    background: #eee;       /* Define um fundo cinza claro para o bloco <pre> (onde o código aparece) */
+    padding: 10px;          /* Adiciona espaçamento interno de 10 pixels em todos os lados */
+    border: 1px solid #ccc; /* Adiciona uma borda cinza clara ao redor do bloco */
+    white-space: pre-wrap;  /* Permite quebra de linha automática dentro do <pre> */
+}

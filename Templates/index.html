@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">  <!-- Define o idioma da página como Português (Brasil) -->
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres para suportar acentos e símbolos -->
+    <title>LLM + Execução de Código JS</title> <!-- Título da aba do navegador -->
+    
+    <!-- Linka o arquivo CSS de estilo localizado na pasta "Static" -->
+    <link rel="stylesheet" type="text/css" href="Static/style.css"> 
+</head>
+
+<body>
+    <!-- Cabeçalho principal da página -->
+    <h1>Gerador e Executor de Código JavaScript com LLM Local</h1>
+
+    <!-- Formulário que envia dados via método POST para o backend Flask -->
+    <form method="POST">
+        <!-- Rótulo para o campo de entrada do prompt -->
+        <label for="prompt">Prompt para LLM:</label><br>
+
+        <!-- Área de texto onde o usuário escreve o prompt.
+             O conteúdo inicial é preenchido com uma sugestão caso o campo esteja vazio. -->
+        <textarea name="prompt" rows="4" required>
+            {{ prompt or "Escreva uma função JavaScript que imprime 'Hello, World!'" }}
+        </textarea><br>
+
+        <!-- Botão de envio do formulário -->
+        <input type="submit" value="Gerar e Executar Código">
+    </form>
+
+    <!-- Bloco condicional Jinja2: se a variável "codigo" existe, exibe o código gerado -->
+    {% if codigo %}
+        <h2>🧠 Código Gerado</h2>
+        <pre>{{ codigo }}</pre> <!-- Exibe o código em um bloco formatado com <pre> -->
+    {% endif %}
+
+    <!-- Bloco condicional: exibe a saída do código executado, se houver -->
+    {% if saida %}
+        <h2>✅ Saída</h2>
+        <pre>{{ saida }}</pre>
+    {% endif %}
+
+    <!-- Bloco condicional: exibe erros da execução, se houver -->
+    {% if erro %}
+        <h2>❌ Erro</h2>
+        <pre>{{ erro }}</pre>
+    {% endif %}
+</body>
+</html>
+
