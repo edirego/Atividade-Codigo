@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 # Configurações da API da LLM (Ollama)
 OLLAMA_URL = "http://localhost:11434/api/generate"  # URL da API local do Ollama
-MODEL_NAME = "deepseek-coder"  # Nome do modelo a ser utilizado
+MODEL_NAME = "codellama"  # Nome do modelo a ser utilizado
 ARQUIVO_JS = "gerado.js"  # Nome do arquivo onde o código gerado será salvo
 
 # Função que envia o prompt para a LLM e recebe o código de volta
